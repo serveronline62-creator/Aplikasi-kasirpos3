@@ -14,17 +14,17 @@
 
     <style>
         :root {
-            --primary: #e30613;              /* Merah POLYTRON */
+            --primary: #e30613;
             --primary-hover: #c00510;
             --primary-glow: rgba(227, 6, 19, 0.25);
-            --bg-main: #f2f2f2;              /* Abu-abu terang modern */
-            --sidebar-bg: #e30613;           /* Sidebar merah */
+            --bg-main: #f2f2f2;
+            --sidebar-bg: #e30613;
             --sidebar-hover: rgba(255, 255, 255, 0.15);
             --sidebar-active: #b00510;
-            --text-dark: #1a1a1a;            /* Hitam modern */
-            --text-muted: #6b7280;           /* Abu sedang */
-            --card-bg: #ffffff;              /* Putih bersih */
-            --border: #e0e0e0;               /* Border abu tipis */
+            --text-dark: #1a1a1a;
+            --text-muted: #6b7280;
+            --card-bg: #ffffff;
+            --border: #e0e0e0;
             --success: #28a745;
             --warning: #ffc107;
             --info: #007bff;
@@ -147,13 +147,18 @@
             font-size: 1.4rem;
             margin-right: 10px;
         }
+        /* ===== HEADER TITLE HITAM DENGAN BACKGROUND PUTIH ===== */
         .top-header-title {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 700;
             letter-spacing: 0.5px;
-            padding-left: 24px;
-            color: #ffffff;
+            color: #000000;               /* TEKS HITAM */
+            background: #ffffff;          /* BACKGROUND PUTIH */
+            padding: 8px 18px;
+            border-radius: 6px;
             text-transform: uppercase;
+            margin-left: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
         .top-header-right {
             display: flex;
@@ -202,9 +207,6 @@
             flex-direction: column;
             box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
         }
-        .sidebar-brand {
-            display: none;
-        }
         .sidebar-section {
             padding: 14px 20px 6px;
             font-size: 0.65rem;
@@ -228,7 +230,6 @@
             align-items: center;
             gap: 12px;
             transition: 0.2s;
-            border-radius: 0;
             color: rgba(255, 255, 255, 0.85);
             font-size: 0.85rem;
             font-weight: 500;
@@ -249,7 +250,6 @@
             color: white;
             font-weight: 700;
             border-left: 3px solid #ffffff;
-            box-shadow: none;
         }
         .sidebar-menu li.logout-btn {
             color: #ffd7d9;
@@ -276,19 +276,14 @@
             min-height: calc(100vh - 56px);
             background: var(--bg-main);
         }
-        .page-header {
-            margin-bottom: 20px;
-        }
+        .page-header { margin-bottom: 20px; }
         .page-header h2 {
             font-weight: 800;
             font-size: 1.5rem;
             letter-spacing: -0.5px;
             color: var(--text-dark);
         }
-        .page-header p {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-        }
+        .page-header p { color: var(--text-muted); font-size: 0.82rem; }
 
         /* ==================== STAT CARD ==================== */
         .stat-card {
@@ -308,10 +303,8 @@
         .stat-card::after {
             content: '';
             position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 110px;
-            height: 110px;
+            top: -30px; right: -30px;
+            width: 110px; height: 110px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             pointer-events: none;
@@ -331,8 +324,7 @@
             color: #fff;
         }
         .stat-card .stat-icon {
-            width: 46px;
-            height: 46px;
+            width: 46px; height: 46px;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -344,37 +336,21 @@
         }
 
         .stat-card.card-pendapatan,
-        .stat-card.card-rpt-pendapatan {
-            background: linear-gradient(135deg, #e30613 0%, #b00510 100%);
-        }
+        .stat-card.card-rpt-pendapatan { background: linear-gradient(135deg, #e30613 0%, #b00510 100%); }
         .stat-card.card-laba,
-        .stat-card.card-rpt-laba {
-            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
-        }
+        .stat-card.card-rpt-laba { background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); }
         .stat-card.card-trx,
-        .stat-card.card-rpt-trx {
-            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
-            color: #1a1a1a;
-        }
+        .stat-card.card-rpt-trx { background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%); color: #1a1a1a; }
         .stat-card.card-trx .stat-label,
         .stat-card.card-trx h4,
         .stat-card.card-rpt-trx .stat-label,
-        .stat-card.card-rpt-trx h4 {
-            color: #1a1a1a;
-        }
+        .stat-card.card-rpt-trx h4 { color: #1a1a1a; }
         .stat-card.card-trx .stat-icon,
-        .stat-card.card-rpt-trx .stat-icon {
-            background: rgba(0, 0, 0, 0.1);
-            color: #1a1a1a;
-        }
-        .stat-card.card-modal {
-            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-        }
-        .stat-card.card-rpt-modal {
-            background: linear-gradient(135deg, #495057 0%, #212529 100%);
-        }
+        .stat-card.card-rpt-trx .stat-icon { background: rgba(0, 0, 0, 0.1); color: #1a1a1a; }
+        .stat-card.card-modal { background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); }
+        .stat-card.card-rpt-modal { background: linear-gradient(135deg, #495057 0%, #212529 100%); }
 
-        /* ==================== TABLE CONTAINER ==================== */
+        /* ==================== TABLE ==================== */
         .table-container {
             background: var(--card-bg);
             border-radius: 8px;
@@ -382,9 +358,7 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
             border: 1px solid var(--border);
         }
-        .table {
-            margin-bottom: 0;
-        }
+        .table { margin-bottom: 0; }
         .table thead th {
             color: var(--text-muted);
             font-size: 0.72rem;
@@ -402,9 +376,7 @@
             font-size: 0.83rem;
             border-bottom: 1px solid #f0f0f0;
         }
-        .table tbody tr:hover {
-            background: #fafafa;
-        }
+        .table tbody tr:hover { background: #fafafa; }
 
         /* ==================== POS ==================== */
         .pos-grid {
@@ -441,8 +413,7 @@
         }
         .product-card.out-of-stock { opacity: 0.45; pointer-events: none; }
         .product-card .prod-icon {
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
             border-radius: 10px;
             display: flex;
@@ -471,7 +442,6 @@
             background-color: var(--primary-hover);
             border-color: var(--primary-hover);
         }
-        .btn-primary:active { transform: scale(0.97); }
         .btn-success {
             background-color: var(--success);
             border-color: var(--success);
@@ -481,8 +451,6 @@
             background-color: #218838;
             border-color: #218838;
         }
-
-        /* Tombol Detail (Biru) */
         .btn-detail {
             background-color: #007bff;
             border-color: #007bff;
@@ -498,8 +466,6 @@
             border-color: #0069d9;
             color: white;
         }
-
-        /* Tombol Tambah (Kuning) */
         .btn-tambah {
             background-color: #ffc107;
             border-color: #ffc107;
@@ -515,8 +481,6 @@
             border-color: #e0a800;
             color: #1a1a1a;
         }
-
-        /* Tombol Download (Hijau) */
         .btn-download {
             background-color: #28a745;
             border-color: #28a745;
@@ -533,8 +497,16 @@
             color: white;
         }
 
-        /* ==================== MODALS ==================== */
-        .modal-content { border-radius: 10px; border: none; overflow: hidden; }
+        /* ==================== MODALS - MELAYANG TURUN ==================== */
+        .modal { z-index: 1300 !important; }
+        .modal-backdrop { z-index: 1290 !important; }
+
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);   /* EFEK MELAYANG */
+        }
         .modal-header {
             background: #fafafa;
             border-bottom: 1px solid var(--border);
@@ -542,6 +514,29 @@
         }
         .modal-body { padding: 18px; }
         .modal-footer { padding: 12px 18px; border-top: 1px solid var(--border); }
+
+        /* Posisi modal turun ke bawah agar tidak tertutup header */
+        #productModal .modal-dialog,
+        #categoryModal .modal-dialog,
+        #receiptModal .modal-dialog,
+        #uploadModal .modal-dialog {
+            margin-top: 90px;          /* TURUN KE BAWAH */
+            margin-bottom: 40px;
+        }
+
+        /* Modal Edit Produk - melayang seperti popup */
+        #productModal .modal-dialog {
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Body modal bisa scroll jika konten panjang */
+        #productModal .modal-body,
+        #categoryModal .modal-body {
+            max-height: calc(100vh - 260px);
+            overflow-y: auto;
+        }
 
         .form-floating > .form-control,
         .form-floating > .form-select {
@@ -585,8 +580,7 @@
         }
         #sync-indicator {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 20px; right: 20px;
             padding: 8px 14px;
             background: #1a1a1a;
             color: white;
@@ -602,8 +596,7 @@
 
         .toast-container-custom {
             position: fixed;
-            top: 70px;
-            right: 20px;
+            top: 70px; right: 20px;
             z-index: 10000;
             display: flex;
             flex-direction: column;
@@ -657,8 +650,7 @@
             color: #dc2626;
         }
         .sync-dot {
-            width: 6px;
-            height: 6px;
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: var(--success);
             animation: pulse 2s ease infinite;
@@ -856,6 +848,7 @@
                 <div class="top-header-brand">
                     <i class="bi bi-box-seam"></i> KASIRPOS
                 </div>
+                <!-- HEADER TITLE HITAM -->
                 <div class="top-header-title">Point of Sale Management System</div>
             </div>
             <div class="top-header-right">
@@ -890,7 +883,6 @@
 
         <!-- Main Content -->
         <div class="main-content">
-            <!-- Top Bar -->
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <button class="btn btn-light d-lg-none" onclick="document.getElementById('sidebar').classList.toggle('show')" style="border-radius:6px;padding:4px 10px;font-size:0.8rem;border:1px solid var(--border);">
                     <i class="bi bi-list fs-6"></i>
@@ -937,7 +929,6 @@
                     </div>
                 </div>
 
-                <!-- Statistik Dashboard -->
                 <div class="row g-3 mb-3">
                     <div class="col-md-3">
                         <div class="stat-card card-pendapatan">
@@ -1397,12 +1388,16 @@
     </div>
 
     <!-- ==================== MODALS ==================== -->
+    <!-- Product Modal - MELAYANG TURUN -->
     <div class="modal fade" id="productModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fw-bold" style="font-size:1rem;" id="prodModalTitle">Tambah Produk</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><input type="hidden" id="prod-fb-key" /><input type="hidden" id="prod-id" /><div class="form-floating mb-2"><input type="text" class="form-control" id="prod-nama" placeholder="Nama Produk" required style="font-size:0.8rem;" /><label for="prod-nama" style="font-size:0.75rem;">Nama Produk</label></div><div class="form-floating mb-2"><select class="form-select" id="prod-kategori" style="padding-top:1.4rem;padding-bottom:0.5rem;font-size:0.8rem;"><option value="" disabled selected>Pilih Kategori</option></select><label for="prod-kategori" style="font-size:0.75rem;">Kategori</label></div><div class="row"><div class="col-md-4 mb-2"><div class="form-floating"><input type="number" class="form-control" id="prod-stok" placeholder="Stok" min="0" required style="font-size:0.8rem;" /><label for="prod-stok" style="font-size:0.75rem;">Stok</label></div></div><div class="col-md-4 mb-2"><div class="form-floating"><input type="number" class="form-control" id="prod-modal" placeholder="H. Modal" min="0" required style="font-size:0.8rem;" /><label for="prod-modal" style="font-size:0.75rem;">Harga Modal</label></div></div><div class="col-md-4 mb-2"><div class="form-floating"><input type="number" class="form-control" id="prod-jual" placeholder="H. Jual" min="0" required style="font-size:0.8rem;" /><label for="prod-jual" style="font-size:0.75rem;">Harga Jual</label></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" style="border-radius:6px;font-size:0.8rem;" data-bs-dismiss="modal">Batal</button><button type="button" class="btn btn-primary" style="border-radius:6px;font-size:0.8rem;" onclick="saveProductData()">Simpan</button></div></div></div></div>
 
+    <!-- Category Modal -->
     <div class="modal fade" id="categoryModal" tabindex="-1"><div class="modal-dialog modal-sm"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fw-bold" style="font-size:1rem;" id="catModalTitle">Tambah Kategori</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><input type="hidden" id="cat-fb-key" /><input type="hidden" id="cat-id" /><div class="form-floating"><input type="text" class="form-control" id="cat-nama" placeholder="Nama Kategori" required style="font-size:0.8rem;" /><label for="cat-nama" style="font-size:0.75rem;">Nama Kategori</label></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" style="border-radius:6px;font-size:0.8rem;" data-bs-dismiss="modal">Batal</button><button type="button" class="btn btn-primary" style="border-radius:6px;font-size:0.8rem;" onclick="saveCategoryData()">Simpan</button></div></div></div></div>
 
+    <!-- Receipt Modal -->
     <div class="modal fade" id="receiptModal" tabindex="-1"><div class="modal-dialog modal-sm"><div class="modal-content"><div class="modal-header" style="background:var(--success);color:white;"><h5 class="modal-title fw-bold" style="font-size:1rem;"><i class="bi bi-check-circle"></i> Transaksi Berhasil</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-3" id="receipt-content" style="font-size:0.85rem;"></div><div class="modal-footer flex-column p-2"><div class="input-group mb-1"><span class="input-group-text" style="border-radius:6px 0 0 6px;font-size:0.8rem;"><i class="bi bi-whatsapp"></i></span><input type="text" class="form-control" id="wa-phone-receipt" placeholder="No. WhatsApp (08xxx)" style="border-radius:0;font-size:0.8rem;" /><button class="btn text-white" style="background:#25D366;border-radius:0 6px 6px 0;font-size:0.8rem;" onclick="sendWhatsappFromReceipt()">Kirim</button></div><div class="d-flex gap-2 w-100"><button class="btn btn-outline-secondary w-100" style="border-radius:6px;font-size:0.8rem;" onclick="printCurrentReceipt()"><i class="bi bi-printer"></i> Cetak</button><button class="btn btn-primary w-100" style="border-radius:6px;font-size:0.8rem;" data-bs-dismiss="modal">Selesai</button></div></div></div></div></div>
 
+    <!-- Upload Modal -->
     <div class="modal fade" id="uploadModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fw-bold" style="font-size:1rem;"><i class="bi bi-upload"></i> Upload Data Produk</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">
         <div class="alert alert-info py-2" style="font-size:0.8rem;">
             <i class="bi bi-info-circle"></i> Format file: <strong>.xlsx, .xls, .csv</strong> dengan kolom: 
@@ -1721,9 +1716,7 @@
             renderDashboard();
         }
 
-        function getSortOrder() {
-            return localStorage.getItem('productSortOrder') || 'nama-asc';
-        }
+        function getSortOrder() { return localStorage.getItem('productSortOrder') || 'nama-asc'; }
 
         function setSortOrder(order) {
             localStorage.setItem('productSortOrder', order);
@@ -1737,18 +1730,14 @@
             const order = document.getElementById('prod-sort').value;
             setSortOrder(order);
             renderProducts();
-            if (document.getElementById('page-pos').style.display !== 'none') {
-                renderPosProducts();
-            }
+            if (document.getElementById('page-pos').style.display !== 'none') renderPosProducts();
         }
 
         function handlePosSortChange() {
             const order = document.getElementById('pos-sort').value;
             setSortOrder(order);
             renderPosProducts();
-            if (document.getElementById('page-products').style.display !== 'none') {
-                renderProducts();
-            }
+            if (document.getElementById('page-products').style.display !== 'none') renderProducts();
         }
 
         // ==================== DASHBOARD ====================
